@@ -37,7 +37,7 @@ def webhook():
     
     symbol= data['ticker'][:-4] #new
     side = data['strategy']['order_action'].upper()
-    quantity = data['strategy']['market_position_size'] #new
+    quantity = data['strategy']['order_contracts'] #new
     order_response = order(side, quantity, symbol) #new
     #print(symbol)
     if order_response:
